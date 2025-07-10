@@ -12,3 +12,12 @@
 온라인의 글을 검색해보니 최근 들어서 [axum](< https://docs.rs/axum/latest/axum/ >)도 많이 사용하는 것 같다.  
 [axum](< https://docs.rs/axum/latest/axum/ >)의 문서화는 훌륭해서 다른 웹 프레임워크를 사용해봤다면 코드를 작성하는데 큰 어려움은 없다.  
 하지만 책으로 체계적으로 지식을 쌓는 쪽이 훨씬 재미있다.   
+
+## 실행환경 설정
+
+### Postgresql
+
+[/go/postgres/init_db.go](/go/postgres/init_db.go)를 이용한다.
+```
+go run ./go/postgres/init_db.go
+```
