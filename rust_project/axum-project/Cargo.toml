@@ -1,0 +1,10 @@
+[package]
+name = "axum-project"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+axum = { version = "0.8", features = ["json", "multipart"] }
+axum-extra = { version = "0.10", features = ["typed-header"] }
+serde_json = "1.0"
+tokio = { version = "1.46", features = ["rt-multi-thread"] }

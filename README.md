@@ -21,3 +21,7 @@
 ```
 go run ./go/postgres/init_db.go
 ```
+
+### httpie
+책에서는 '[Insominia]( <https://insomnia.rest/> )'를 사용했다.  
+여기에서는 대신에 '[httpie]( <https://httpie.io/> )'를 사용해서 API 테스트를 진행한다.
