@@ -7,7 +7,10 @@ use axum::{
 };
 use sea_orm::{ActiveValue, ColumnTrait, Condition, DatabaseConnection, EntityTrait, QueryFilter};
 
-use crate::{entities::users, utils::app_error::AppError};
+use crate::{
+    entities::users,
+    utils::{app_error::AppError, hash::hash_password},
+};
 
 pub async fn get_user(
     State(conn): State<DatabaseConnection>,
@@ -57,7 +60,7 @@ pub async fn post_user(
     let new_user = users::ActiveModel {
         id: ActiveValue::NotSet,
         username: ActiveValue::Set(username),
-        password: ActiveValue::Set(password),
+        password: ActiveValue::Set(hash_password(&password)?),
     };
 
     users::Entity::insert(new_user)

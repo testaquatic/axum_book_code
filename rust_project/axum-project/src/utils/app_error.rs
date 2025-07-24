@@ -1,4 +1,8 @@
-use axum::{Json, http::StatusCode, response::IntoResponse};
+use axum::{
+    Json,
+    http::StatusCode,
+    response::{self, IntoResponse},
+};
 
 pub struct AppError {
     code: StatusCode,
@@ -18,7 +22,7 @@ impl AppError {
 }
 
 impl IntoResponse for AppError {
-    fn into_response(self) -> axum::response::Response {
+    fn into_response(self) -> response::Response {
         (self.code, Json(self.message.clone())).into_response()
     }
 }
