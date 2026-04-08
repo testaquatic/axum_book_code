@@ -1,0 +1,10 @@
+[package]
+name = "axum-project"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# 웹 프레임워크
+axum = { version = "0.8", features = ["json"] }
+# 비동기 런타임
+tokio = { version = "1.50", features = ["rt-multi-thread", "macros"] }
